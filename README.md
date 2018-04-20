@@ -58,6 +58,8 @@ Launch the project to run:
 ```
 $dotnet run
 ```
+
+After executing the ```$dotnet run``` command, your browser should automatically open and navigate to http://localhost:5000.
 	 
 ## Specifications
 * Admin will be able to create a new "Gummi" with name, price, description values.
