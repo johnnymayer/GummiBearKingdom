@@ -1,11 +1,18 @@
-﻿@{
+﻿@model GummiBearKingdom.Models.Gummi
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h1>GUMMI BEAR KINGDOM</h1>
-<br>
-<img id="homeGummi" src="~/favicon.ico">
-<h3>Welcome to Gummi Bear Kingdom!</h3>
-<p>GBK is your one stop shop for all things Gummi Bear!  That's right folks, we've got the goods!</p>
-<br>
-<span class="bigLink">@Html.ActionLink("View Gummis", "Index", "Gummis")</span>
+<div class="homePage">
+    <img id="homeGummi" src="~/favicon.ico">
+    <h3>Welcome to Gummi Bear Kingdom!</h3>
+    <p>GBK is your one stop shop for all things Gummi Bear!  That's right folks, we've got the goods!</p>
+    <br>
+    
+        @Html.DisplayFor(item => item.Name)
+        @Html.DisplayFor(item => item.Price)
+        @Html.DisplayFor(item => item.Description)
+    
+    <span class="bigLink">@Html.ActionLink("View Gummis", "Index", "Gummis")</span>
+</div>
