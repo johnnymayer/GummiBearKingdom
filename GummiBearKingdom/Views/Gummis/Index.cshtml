@@ -7,7 +7,7 @@
 
 <h1>Gummis</h1>
 
-<p style="text-align:center">Here's a list of our incredible Gummis!  Browse them and enjoy!</p>
+<p style="text-align:center">Here's a list of our incredible Gummis!  Click a Gummi to view its details!  Browse them and enjoy!</p>
     <table class="table">
         <tr>
             <th> @Html.DisplayNameFor(model => model.Name) </th>
@@ -18,12 +18,11 @@
 
     @foreach (var item in Model) {
         <tr>
-            <td>@Html.DisplayFor(modelItem => item.Name)</td>
-            <td>@Html.DisplayFor(modelItem => item.Price)</td>
+            <td><a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a></td>
+            <td>$@Html.DisplayFor(modelItem => item.Price)</td>
             <td>@Html.DisplayFor(modelItem => item.Description)</td>
             <td>
             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a>
             <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
