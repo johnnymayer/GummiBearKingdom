@@ -1,14 +1,14 @@
-﻿html {
-    background: url("https://images.unsplash.com/photo-1520765051688-9fd6561b22f3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c325949c5640cdb7f845d37a6ce6a8e&auto=format&fit=crop&w=933&q=80") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover
+﻿html, body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
 }
 
-body, html {
-    padding-left:15px;
-    padding-right: 15px;
+body {
+    display: grid
 }
 
 .body-content {
@@ -42,7 +42,7 @@ body, html {
 
 a {
     text-decoration: none;
-    color: rgb(249,0,0);
+    color: rgb(255,255,255);
 }
 
 a:hover {
