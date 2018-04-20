@@ -25,7 +25,7 @@ namespace GummiBearKingdom.Controllers
         }
 
         // GET: Gummis/Details/5
-        public async Task<IActionResult> Details(string? id)
+        public async Task<IActionResult> Details(int id)
         {
             if (id == null)
             {
@@ -65,7 +65,7 @@ namespace GummiBearKingdom.Controllers
         }
 
         // GET: Gummis/Edit/5
-        public async Task<IActionResult> Edit(string? id)
+        public async Task<IActionResult> Edit(int id)
         {
             if (id == null)
             {
@@ -116,7 +116,7 @@ namespace GummiBearKingdom.Controllers
         }
 
         // GET: Gummis/Delete/5
-        public async Task<IActionResult> Delete(string? id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id == null)
             {
