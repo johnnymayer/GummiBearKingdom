@@ -26,6 +26,11 @@ namespace GummiBearKingdom.Models
             GummiId = 0;
         }
 
+        public Gummi()
+        {
+            
+        }
+
 		public override bool Equals(object otherGummi)
 		{
             if (!(otherGummi is Gummi))
