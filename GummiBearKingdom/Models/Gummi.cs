@@ -9,11 +9,13 @@ namespace GummiBearKingdom.Models
     [Table("Gummis")]
     public class Gummi
     {
+
         [Key]
-        public int Id { get; set; }
+        public int GummiId { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
         public string Description { get; set; }
-        public virtual Review Review { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+        public int? Id { get; internal set; }
     }
 }

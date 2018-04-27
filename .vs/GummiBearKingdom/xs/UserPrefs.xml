@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{A9BF0F1D-6B66-44DA-AED9-CAADEBF5A6F9}|Default">
   <MonoDevelop.Ide.ItemProperties.GummiBearKingdom PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GummiBearKingdom/Models/Gummi.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GummiBearKingdom/GummiBearKingdom.csproj">
     <Files>
       <File FileName="GummiBearKingdom/Migrations/GummiBearKingdomDbContextModelSnapshot.cs" Line="1" Column="1" />
       <File FileName="GummiBearKingdom/Migrations/20180420183159_Secondary.Designer.cs" Line="1" Column="1" />
@@ -18,9 +18,10 @@
       <File FileName="GummiBearKingdom/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
       <File FileName="GummiBearKingdom/Controllers/GummisController.cs" Line="1" Column="1" />
       <File FileName="GummiBearKingdom/Controllers/HomeController.cs" Line="19" Column="10" />
-      <File FileName="GummiBearKingdom/Models/Gummi.cs" Line="1" Column="1" />
-      <File FileName="GummiBearKingdom/Models/Review.cs" Line="14" Column="9" />
-      <File FileName="GummiBearKingdom/Models/GummiBearKingdomDbContext.cs" Line="1" Column="1" />
+      <File FileName="GummiBearKingdom/Models/Gummi.cs" Line="16" Column="48" />
+      <File FileName="GummiBearKingdom/Models/Review.cs" Line="24" Column="9" />
+      <File FileName="GummiBearKingdom/Models/GummiBearKingdomDbContext.cs" Line="12" Column="51" />
+      <File FileName="GummiBearKingdom/GummiBearKingdom.csproj" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

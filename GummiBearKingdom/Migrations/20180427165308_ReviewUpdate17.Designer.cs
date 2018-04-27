@@ -8,27 +8,26 @@ using GummiBearKingdom.Models;
 namespace GummiBearKingdom.Migrations
 {
     [DbContext(typeof(GummiBearKingdomDbContext))]
-    partial class GummiBearKingdomDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180427165308_ReviewUpdate17")]
+    partial class ReviewUpdate17
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.5");
 
             modelBuilder.Entity("GummiBearKingdom.Models.Gummi", b =>
                 {
-                    b.Property<int>("GummiId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
-
-                    b.Property<int?>("Id");
 
                     b.Property<string>("Name");
 
                     b.Property<int>("Price");
 
-                    b.HasKey("GummiId");
+                    b.HasKey("Id");
 
                     b.ToTable("Gummis");
                 });

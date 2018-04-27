@@ -33,7 +33,7 @@ namespace GummiBearKingdom.Controllers
             }
 
             var gummi = await _context.Gummis
-                .SingleOrDefaultAsync(m => m.Id == id);
+                .SingleOrDefaultAsync(m => m.GummiId == id);
             if (gummi == null)
             {
                 return NotFound();
@@ -53,7 +53,7 @@ namespace GummiBearKingdom.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,Description")] Gummi gummi)
+        public async Task<IActionResult> Create([Bind("GummiId,Name,Price,Description")] Gummi gummi)
         {
             if (ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace GummiBearKingdom.Controllers
                 return NotFound();
             }
 
-            var gummi = await _context.Gummis.SingleOrDefaultAsync(m => m.Id == id);
+            var gummi = await _context.Gummis.SingleOrDefaultAsync(m => m.GummiId == id);
             if (gummi == null)
             {
                 return NotFound();
@@ -85,9 +85,9 @@ namespace GummiBearKingdom.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description")] Gummi gummi)
+        public async Task<IActionResult> Edit(int id, [Bind("GummiId,Name,Price,Description")] Gummi gummi)
         {
-            if (id != gummi.Id)
+            if (id != gummi.GummiId)
             {
                 return NotFound();
             }
@@ -101,7 +101,7 @@ namespace GummiBearKingdom.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GummiExists(gummi.Id))
+                    if (!GummiExists(gummi.GummiId))
                     {
                         return NotFound();
                     }
@@ -124,7 +124,7 @@ namespace GummiBearKingdom.Controllers
             }
 
             var gummi = await _context.Gummis
-                .SingleOrDefaultAsync(m => m.Id == id);
+                .SingleOrDefaultAsync(m => m.GummiId == id);
             if (gummi == null)
             {
                 return NotFound();
@@ -138,7 +138,7 @@ namespace GummiBearKingdom.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var gummi = await _context.Gummis.SingleOrDefaultAsync(m => m.Id == id);
+            var gummi = await _context.Gummis.SingleOrDefaultAsync(m => m.GummiId == id);
             _context.Gummis.Remove(gummi);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -146,7 +146,7 @@ namespace GummiBearKingdom.Controllers
 
         private bool GummiExists(int id)
         {
-            return _context.Gummis.Any(e => e.Id == id);
+            return _context.Gummis.Any(e => e.GummiId == id);
         }
     }
 }

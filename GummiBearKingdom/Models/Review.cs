@@ -9,16 +9,16 @@ namespace GummiBearKingdom.Models
     [Table("Reviews")]
     public class Review
     {
-        public Review()
-        {
-            this.Gummis = new HashSet<Gummi>();
-        }
 
-        public int AuthorId { get; set; }
+        [Key]
+        public int ReviewId { get; set; }
         public string Author { get; set; }
         public string Content { get; set; }
+
+        [Range(1,5)]
         public int Rating { get; set; }
-        public virtual ICollection<Gummi> Gummis { get; set; }
+        public int Id { get; set; }
+        public virtual Gummi Gummi { get; set; }
 
     }
 }

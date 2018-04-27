@@ -8,58 +8,55 @@ using GummiBearKingdom.Models;
 namespace GummiBearKingdom.Migrations
 {
     [DbContext(typeof(GummiBearKingdomDbContext))]
-    partial class GummiBearKingdomDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180427161240_ReviewUpdate5")]
+    partial class ReviewUpdate5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.5");
 
             modelBuilder.Entity("GummiBearKingdom.Models.Gummi", b =>
                 {
-                    b.Property<int>("GummiId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
-
-                    b.Property<int?>("Id");
 
                     b.Property<string>("Name");
 
                     b.Property<int>("Price");
 
-                    b.HasKey("GummiId");
+                    b.Property<int?>("ReviewAuthorId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReviewAuthorId");
 
                     b.ToTable("Gummis");
                 });
 
             modelBuilder.Entity("GummiBearKingdom.Models.Review", b =>
                 {
-                    b.Property<int>("ReviewId")
+                    b.Property<int>("AuthorId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Author");
 
                     b.Property<string>("Content");
 
-                    b.Property<int?>("GummiId");
-
-                    b.Property<int>("Id");
-
                     b.Property<int>("Rating");
 
-                    b.HasKey("ReviewId");
-
-                    b.HasIndex("GummiId");
+                    b.HasKey("AuthorId");
 
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("GummiBearKingdom.Models.Review", b =>
+            modelBuilder.Entity("GummiBearKingdom.Models.Gummi", b =>
                 {
-                    b.HasOne("GummiBearKingdom.Models.Gummi", "Gummi")
-                        .WithMany("Reviews")
-                        .HasForeignKey("GummiId");
+                    b.HasOne("GummiBearKingdom.Models.Review", "Review")
+                        .WithMany("Gummis")
+                        .HasForeignKey("ReviewAuthorId");
                 });
         }
     }
