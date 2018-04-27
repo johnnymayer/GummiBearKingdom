@@ -35,6 +35,7 @@
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Models\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -20,5 +20,34 @@ namespace GummiBearKingdom.Models
         public int Id { get; set; }
         public virtual Gummi Gummi { get; set; }
 
-    }
+        public Review(string author, string content)
+        {
+            Author = author;
+            Content = content;
+            ReviewId = 0;
+        }
+
+        public Review()
+        {
+            
+        }
+
+		public override bool Equals(object otherReview)
+        {
+            if (!(otherReview is Review))
+            {
+                return false;
+            }
+            else
+            {
+                Review newReview = (Review)otherReview;
+                return this.ReviewId.Equals(newReview.ReviewId);
+            }
+        }
+
+		public override int GetHashCode()
+		{
+            return this.ReviewId.GetHashCode();
+		}
+	}
 }
