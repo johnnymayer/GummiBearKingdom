@@ -34,6 +34,11 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20180420154446_Initial.cs" />
+    <Compile Remove="Migrations\GummiBearKingdomDbContextModelSnapshot.cs" />
+  </ItemGroup>
 </Project>

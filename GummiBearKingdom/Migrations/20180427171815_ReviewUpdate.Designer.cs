@@ -8,8 +8,8 @@ using GummiBearKingdom.Models;
 namespace GummiBearKingdom.Migrations
 {
     [DbContext(typeof(GummiBearKingdomDbContext))]
-    [Migration("20180427165644_ReviewUpdate18")]
-    partial class ReviewUpdate18
+    [Migration("20180427171815_ReviewUpdate")]
+    partial class ReviewUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,8 +22,6 @@ namespace GummiBearKingdom.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
-
-                    b.Property<int?>("Id");
 
                     b.Property<string>("Name");
 

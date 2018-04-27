@@ -22,8 +22,6 @@ namespace GummiBearKingdom.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<int?>("Id");
-
                     b.Property<string>("Name");
 
                     b.Property<int>("Price");
