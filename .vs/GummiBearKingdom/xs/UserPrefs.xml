@@ -1,16 +1,11 @@
 ﻿<Properties StartupConfiguration="{A9BF0F1D-6B66-44DA-AED9-CAADEBF5A6F9}|Default">
   <MonoDevelop.Ide.ItemProperties.GummiBearKingdom PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GummiBearKingdom/Models/Repositories/IGummiRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GummiBearKingdom/Models/Repositories/EFReviewRepository.cs">
     <Files>
-      <File FileName="GummiBearKingdom/Models/Repositories/IGummiRepository.cs" Line="14" Column="1" NotebookId="1" />
+      <File FileName="GummiBearKingdom/Models/Repositories/IGummiRepository.cs" Line="5" Column="1" />
+      <File FileName="GummiBearKingdom/Models/Repositories/IReviewRepository.cs" Line="17" Column="1" />
+      <File FileName="GummiBearKingdom/Models/Repositories/EFReviewRepository.cs" Line="4" Column="37" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="123" Y="23" Width="628" Height="1008">
-        <Files>
-          <File FileName="GummiBearKingdom/Controllers/GummisController.cs" Line="8" Column="1" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
