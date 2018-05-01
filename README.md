@@ -1,7 +1,7 @@
 # Gummi Bear Kingdom
-### A sample layout for the future Gummi Bear Kingdom site!
+### A simple example for Gummi Bear Kingdom's new online site!
 
-This is a sample layout and design for an updated version of Gummi Bear Kingdom.  It will allow guests to browse all Gummis available, and it will allow Admins to add, edit, or delete new or existing Gummis.
+This is a sample layout and design for an updated version of Gummi Bear Kingdom.  It will allow guests to browse all Gummis available, and it will allow Admins to add, edit, or delete new or existing Gummis.  It includes 26 tests for the purposes of modularizing the code, and testing each model and controller independently.
 
 
 ## Getting Started & Requirements
@@ -32,19 +32,19 @@ $cd GummiBearKingdom
 Run a dotnet restore to restore files post download:
 
 ```
-dotnet restore
+$dotnet restore
 ```
 
 Start your MAMP servers, making sure the MySQL port is set to 8889.
 Create Database via dotnet migrations:
 
 ```
-dotnet ef migrations add Initial
+$dotnet ef migrations add Initial
 ```
 And then update the database:
 
 ```
-dotnet ef database update
+$dotnet ef database update
 ```
 
 Build the project:
@@ -53,6 +53,10 @@ Build the project:
 $dotnet build
 ```
 
+Set up the database for the project:
+```
+$do
+
 Launch the project to run:
 
 ```
@@ -60,6 +64,42 @@ $dotnet run
 ```
 
 After executing the ```$dotnet run``` command, your browser should automatically open and navigate to http://localhost:5000.
+
+### Testing
+Navigate to the cloned directory:
+
+```
+$cd gummibearkingdom
+```
+
+Navigate to the GummiBearKingdom.Tests directory:
+
+```
+$cd GummiBearKingdom.Tests
+```
+
+Run a dotnet restore to restore files post download:
+
+```
+$dotnet restore
+```
+Start your MAMP servers, making sure the MySQL port is set to 8889.
+Create Database via dotnet migrations:
+
+```
+$dotnet ef migrations add Initial
+```
+And then update the database:
+
+```
+$dotnet ef database update
+```
+
+Run a dotnet test to check all test commands and see results.
+
+```
+$dotnet test
+```
 	 
 ## Specifications
 * Admin will be able to create a new "Gummi" with name, price, description values.
@@ -69,19 +109,16 @@ After executing the ```$dotnet run``` command, your browser should automatically
 * A user should be able to click on a link on the Landing page that takes them to a page that lists all available Products.
 	* If a user clicks the "View Gummis" link on the Home page, they will be redirected to a table containing all Gummis.
 
+* A user can create a review for each individual Gummi, which includes Author name, content, and a rating between 1-5.
+
 * A user should be able to click on each Product and see its Details.
 	* If a user clicks the Gummi's name, they will be redirected to a page with details of the selected Gummi, with Name, Price, and a Description.
 
 * An admin should be able to add and remove individual Products, as well as delete all Products.
-	* Currently all CRUD functions are accessible.
 
-	
-	***Future feature proposal:***
-	
-	* Authentication will be added with separate routings to allow for "Admin" or "Owner" or "Guest" level access privileges.  The tiered privileges will allow for CRUD, and other functionality at top tiers, and for "read only", "purchase" functions at lower level tiers such as "Guest".
-	
 ## Built With
 * Visual Studio 2017
+* MSTest
 * C#
 * ASP.NET
 * Dotnet Core 1.1
