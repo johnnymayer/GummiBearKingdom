@@ -36,7 +36,7 @@ namespace GummiBearKingdom.Tests
             var result = controller.Index();
 
             //Assert
-            Assert.IsInstanceOfType(result, typeof(IActionResult);
+            Assert.IsInstanceOfType(result, typeof(ActionResult));
         }
 
 

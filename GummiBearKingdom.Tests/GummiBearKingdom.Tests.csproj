@@ -16,9 +16,4 @@
   <ItemGroup>
     <ProjectReference Include="..\GummiBearKingdom\GummiBearKingdom.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ModelTests\" />
-    <Folder Include="ControllerTests\" />
-  </ItemGroup>
 </Project>
