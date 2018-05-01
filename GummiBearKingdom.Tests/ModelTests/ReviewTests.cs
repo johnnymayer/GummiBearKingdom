@@ -57,5 +57,30 @@ namespace GummiBearKingdom.Tests
             Assert.AreEqual("New gummi review", newReview.Content);
         }
 
+        [TestMethod]
+        public void RatingVal_ChecksRatingValue_True()
+        {
+            //Arrange
+            Review newReview = new Review { ReviewId = 0, Author = "John", Content = "Basic gummi review", Rating = 3 };
+
+            //Act
+            var result = newReview.Rating;
+
+            //Assert
+            Assert.AreEqual(result, 3);
+        }
+
+        [TestMethod]
+        public void ContentLength_Checks()
+        {
+            //Arrange
+            Review newReview = new Review { ReviewId = 0, Author = "John", Content = "Basic gummi review", Rating = 3 };
+
+            //Act
+            var result = newReview.Content.Length;
+
+            //Assert
+            Assert.AreEqual(result, 18);
+        }
     }
 }

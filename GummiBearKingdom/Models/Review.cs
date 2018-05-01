@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata.Ecma335;
+using GummiBearKingdom.Controllers;
 
 namespace GummiBearKingdom.Models
 {
@@ -51,5 +52,29 @@ namespace GummiBearKingdom.Models
 		{
             return this.ReviewId.GetHashCode();
 		}
-	}
+
+        public virtual bool RatingValue()
+        {
+            if (this.Rating <= 5 && this.Rating >= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public virtual bool ContentLength()
+        {
+            if(this.Content.Length > 255)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
 }
