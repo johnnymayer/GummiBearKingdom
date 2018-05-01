@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{A9BF0F1D-6B66-44DA-AED9-CAADEBF5A6F9}|Default">
   <MonoDevelop.Ide.ItemProperties.GummiBearKingdom PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GummiBearKingdom/Controllers/GummisController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GummiBearKingdom.Tests/ControllerTests/HomeControllerTests.cs">
     <Files>
-      <File FileName="GummiBearKingdom.Tests/ControllerTests/GummisControllerTest.cs" Line="39" Column="54" />
-      <File FileName="GummiBearKingdom/Controllers/GummisController.cs" Line="12" Column="2" />
+      <File FileName="GummiBearKingdom.Tests/ControllerTests/HomeControllerTests.cs" Line="25" Column="23" />
+      <File FileName="GummiBearKingdom.Tests/ControllerTests/GummisControllerTests.cs" Line="38" Column="26" />
+      <File FileName="GummiBearKingdom/Controllers/HomeController.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
@@ -13,10 +14,8 @@
               <Node name="GummiBearKingdom" expanded="True">
                 <Node name="Tests" expanded="True">
                   <Node name="GummisControllerTest" expanded="True">
-                    <Node name="Mock_GetViewResultIndex_ActionResult" selected="True" />
+                    <Node name="Controller_HttpPostCreate_Creates" selected="True" />
                   </Node>
-                  <Node name="GummiTests" expanded="True" />
-                  <Node name="ReviewTests" expanded="True" />
                 </Node>
               </Node>
             </Node>

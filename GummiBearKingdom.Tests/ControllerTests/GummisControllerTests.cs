@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -13,17 +13,17 @@ using System.Threading.Tasks;
 namespace GummiBearKingdom.Tests
 {
     [TestClass]
-    public class ReviewsControllerTests
+    public class GummisControllerTest
     {
-        Mock<IReviewRepository> mock = new Mock<IReviewRepository>();
+        Mock<IGummiRepository> mock = new Mock<IGummiRepository>();
 
         private void DbSetup()
         {
-            mock.Setup(m => m.Reviews).Returns(new Review[]
+            mock.Setup(m => m.Gummis).Returns(new Gummi[]
             {
-                new Review {Author = "Don", Content = "Hate it." },
-                new Review {Author = "Ron", Content = "Like it." },
-                new Review {Author = "John", Content = "Love it." },
+                new Gummi {GummiId = 1, Description = "A new red gummi" },
+                new Gummi {GummiId = 2, Description = "A new blue gummi"},
+                new Gummi {GummiId = 3, Description = "A new green gummi"}
             }.AsQueryable());
         }
 
@@ -32,7 +32,7 @@ namespace GummiBearKingdom.Tests
         {
             //Arrange
             DbSetup();
-            ReviewsController controller = new ReviewsController(mock.Object);
+            GummisController controller = new GummisController(mock.Object);
 
             //Act
             var result = controller.Index();
@@ -46,7 +46,7 @@ namespace GummiBearKingdom.Tests
         {
             //Arrange
             DbSetup();
-            ReviewsController controller = new ReviewsController(mock.Object);
+            GummisController controller = new GummisController(mock.Object);
 
             //Act
             var result = controller.Details(1);
@@ -60,7 +60,7 @@ namespace GummiBearKingdom.Tests
         {
             //Arrange
             DbSetup();
-            ReviewsController controller = new ReviewsController(mock.Object);
+            GummisController controller = new GummisController(mock.Object);
 
             //Act
             var result = controller.Create();
@@ -74,7 +74,7 @@ namespace GummiBearKingdom.Tests
         {
             //Arrange
             DbSetup();
-            ReviewsController controller = new ReviewsController(mock.Object);
+            GummisController controller = new GummisController(mock.Object);
 
             //Act
             var result = controller.Create();
@@ -88,7 +88,7 @@ namespace GummiBearKingdom.Tests
         {
             //Arrange
             DbSetup();
-            ReviewsController controller = new ReviewsController(mock.Object);
+            GummisController controller = new GummisController(mock.Object);
 
             //Act
             var result = controller.Edit(1);
@@ -102,7 +102,7 @@ namespace GummiBearKingdom.Tests
         {
             //Arrange
             DbSetup();
-            ReviewsController controller = new ReviewsController(mock.Object);
+            GummisController controller = new GummisController(mock.Object);
 
             //Act
             var result = controller.Edit(1);
@@ -115,7 +115,7 @@ namespace GummiBearKingdom.Tests
         public void Controller_GetViewDelete_Deletes()
         {
             DbSetup();
-            ReviewsController controller = new ReviewsController(mock.Object);
+            GummisController controller = new GummisController(mock.Object);
 
             //Act
             var result = controller.Delete(1);
@@ -128,7 +128,7 @@ namespace GummiBearKingdom.Tests
         public void Controller_HttpPostDeleteConfirm_Confirms()
         {
             DbSetup();
-            ReviewsController controller = new ReviewsController(mock.Object);
+            GummisController controller = new GummisController(mock.Object);
 
             //Act
             var result = controller.DeleteConfirmed(1);
@@ -136,7 +136,6 @@ namespace GummiBearKingdom.Tests
             //Assert
             Assert.IsInstanceOfType(result, typeof(Task<IActionResult>));
         }
+
     }
-
 }
-

@@ -6,20 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GummiBearKingdom.Models;
+using GummiBearKingdom.Models.Repositories;
 
 namespace GummiBearKingdom.Controllers
 {
     public class ReviewsController : Controller
     {
         private readonly GummiBearKingdomDbContext _context;
+		private IReviewRepository @object;
 
-        public ReviewsController(GummiBearKingdomDbContext context)
+		public ReviewsController(GummiBearKingdomDbContext context)
         {
             _context = context;    
         }
 
-        // GET: Reviews
-        public async Task<IActionResult> Index()
+		public ReviewsController(IReviewRepository @object)
+		{
+			this.@object = @object;
+		}
+
+		// GET: Reviews
+		public async Task<IActionResult> Index()
         {
             return View(await _context.Reviews.ToListAsync());
         }
