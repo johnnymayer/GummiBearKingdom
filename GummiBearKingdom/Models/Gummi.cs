@@ -28,7 +28,6 @@ namespace GummiBearKingdom.Models
 
         public Gummi()
         {
-            
         }
 
 		public override bool Equals(object otherGummi)

@@ -13,11 +13,14 @@ namespace GummiBearKingdom.Models
         [Key]
         public int ReviewId { get; set; }
         public string Author { get; set; }
+
+        [StringLength(255)]
         public string Content { get; set; }
 
         [Range(1,5)]
         public int Rating { get; set; }
-        public int Id { get; set; }
+
+        [ForeignKey("GummiId")]
         public virtual Gummi Gummi { get; set; }
 
         public Review(string author, string content)
@@ -29,7 +32,6 @@ namespace GummiBearKingdom.Models
 
         public Review()
         {
-            
         }
 
 		public override bool Equals(object otherReview)

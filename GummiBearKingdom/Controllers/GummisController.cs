@@ -6,16 +6,35 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GummiBearKingdom.Models;
+using GummiBearKingdom.Models.Repositories;
 
 namespace GummiBearKingdom.Controllers
 {
     public class GummisController : Controller
     {
+
+        private IGummiRepository gummiRepo;
+
+        public GummisController(IGummiRepository repo = null)
+        {
+            if(repo == null)
+            {
+                this.gummiRepo = new EFGummiRepository();
+            }
+            else
+            {
+                this.gummiRepo = repo;
+            }
+        }
         private readonly GummiBearKingdomDbContext _context;
 
         public GummisController(GummiBearKingdomDbContext context)
         {
             _context = context;    
+        }
+
+        public GummisController()
+        {
         }
 
         // GET: Gummis
@@ -48,9 +67,6 @@ namespace GummiBearKingdom.Controllers
             return View();
         }
 
-        // POST: Gummis/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("GummiId,Name,Price,Description")] Gummi gummi)
@@ -80,9 +96,6 @@ namespace GummiBearKingdom.Controllers
             return View(gummi);
         }
 
-        // POST: Gummis/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("GummiId,Name,Price,Description")] Gummi gummi)
@@ -133,7 +146,6 @@ namespace GummiBearKingdom.Controllers
             return View(gummi);
         }
 
-        // POST: Gummis/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
