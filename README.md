@@ -55,7 +55,8 @@ $dotnet build
 
 Set up the database for the project:
 ```
-$do
+$dotnet ef database update
+```
 
 Launch the project to run:
 
