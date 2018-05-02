@@ -41,6 +41,7 @@ Create Database via dotnet migrations:
 ```
 $dotnet ef migrations add Initial
 ```
+
 And then update the database:
 
 ```
@@ -51,11 +52,6 @@ Build the project:
 
 ```
 $dotnet build
-```
-
-Set up the database for the project:
-```
-$dotnet ef database update
 ```
 
 Launch the project to run:
