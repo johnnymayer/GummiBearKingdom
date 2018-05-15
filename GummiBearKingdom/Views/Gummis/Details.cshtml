@@ -1,5 +1,6 @@
 @model GummiBearKingdom.Models.Gummi
 
+
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,6 +13,23 @@
     $@Html.DisplayFor(model => model.Price)
     <br>
     @Html.DisplayFor(model => model.Description)
+</div>
+<div class="container">
+    <h1>Reviews</h1>
+    @if (Model.Reviews.Count > 0)
+    {
+        @foreach (var review in Model.Reviews)
+        {
+    <h3>Author: @review.Author</h3>
+ <h3>@review.Content</h3>
+ <h3>Rating: @review.Rating</h3>
+ <h3>Average Rating: @Model.RatingAvg().ToString("0") </h3>
+
+        }
+    } else {
+            <h1>This gummi has no reviews!</h1>
+
+    }
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.GummiId">Edit</a> |

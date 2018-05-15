@@ -47,5 +47,23 @@ namespace GummiBearKingdom.Models
 		{
             return this.GummiId.GetHashCode();
 		}
+
+        public int RatingAvg()
+        {
+            int index = 0;
+            foreach(Review review in Reviews)
+            {
+                index += review.Rating;
+            }
+            if (this.Reviews.Count > 0)
+            {
+                int ratingAvg = (int)Math.Round((decimal)index/ this.Reviews.Count);
+                return ratingAvg;
+            }
+            else
+            {
+                return 0;
+            }
+        }
 	}
 }

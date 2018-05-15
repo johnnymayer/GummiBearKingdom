@@ -42,7 +42,7 @@ namespace GummiBearKingdom.Controllers
                 return NotFound();
             }
 
-            var gummi = await _context.Gummis
+            var gummi = await _context.Gummis.Include(r => r.Reviews)
                 .SingleOrDefaultAsync(m => m.GummiId == id);
             if (gummi == null)
             {
