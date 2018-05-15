@@ -13,34 +13,25 @@ namespace GummiBearKingdom.Controllers
     public class GummisController : Controller
     {
 
-        private IGummiRepository gummiRepo;
+        private IGummiRepository _context;
 
         public GummisController(IGummiRepository repo = null)
         {
             if(repo == null)
             {
-                this.gummiRepo = new EFGummiRepository();
+                _context = new EFGummiRepository();
             }
             else
             {
-                this.gummiRepo = repo;
+                _context = repo;
             }
         }
-        private readonly GummiBearKingdomDbContext _context;
 
-        public GummisController(GummiBearKingdomDbContext context)
-        {
-            _context = context;    
-        }
-
-        public GummisController()
-        {
-        }
 
         // GET: Gummis
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Gummis.ToListAsync());
+            return View(_context.Gummis.ToList());
         }
 
         // GET: Gummis/Details/5
@@ -69,12 +60,11 @@ namespace GummiBearKingdom.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GummiId,Name,Price,Description")] Gummi gummi)
+        public IActionResult Create([Bind("GummiId,Name,Price,Description")] Gummi gummi)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(gummi);
-                await _context.SaveChangesAsync();
+                _context.Create(gummi);
                 return RedirectToAction("Index");
             }
             return View(gummi);
@@ -98,7 +88,7 @@ namespace GummiBearKingdom.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GummiId,Name,Price,Description")] Gummi gummi)
+        public IActionResult Edit(int id, [Bind("GummiId,Name,Price,Description")] Gummi gummi)
         {
             if (id != gummi.GummiId)
             {
@@ -109,8 +99,7 @@ namespace GummiBearKingdom.Controllers
             {
                 try
                 {
-                    _context.Update(gummi);
-                    await _context.SaveChangesAsync();
+                    _context.Edit(gummi);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -145,14 +134,10 @@ namespace GummiBearKingdom.Controllers
 
             return View(gummi);
         }
-
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var gummi = await _context.Gummis.SingleOrDefaultAsync(m => m.GummiId == id);
-            _context.Gummis.Remove(gummi);
-            await _context.SaveChangesAsync();
+            _context.Delete(id);
             return RedirectToAction("Index");
         }
 

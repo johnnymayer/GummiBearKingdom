@@ -18,19 +18,19 @@ namespace GummiBearKingdom.Models
         public string Description { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
 
-        public Gummi(string name, string description, int price)
+        public Gummi(string name, string description, int price, int id = 0)
         {
             Name = name;
             Description = description;
             Price = price;
-            GummiId = 0;
+            GummiId = id;
         }
 
         public Gummi()
         {
         }
 
-		public override bool Equals(object otherGummi)
+        public override bool Equals(object otherGummi)
 		{
             if (!(otherGummi is Gummi))
             {

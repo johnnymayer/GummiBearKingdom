@@ -35,7 +35,7 @@ namespace GummiBearKingdom.Tests
             HomeController controller = new HomeController();
 
             //Act
-            var result = controller.Gummi();
+            var result = controller.Gummis();
 
             //Assert
             Assert.IsInstanceOfType(result, typeof(ViewResult));

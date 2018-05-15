@@ -13,7 +13,7 @@ namespace GummiBearKingdom.Controllers
             return View();
         }
 
-        public IActionResult Gummi()
+        public IActionResult Gummis()
         {
             return View();
         }
